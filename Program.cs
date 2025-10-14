@@ -13,7 +13,6 @@ namespace GeorgiaDavid_HealthSystem
         static int health = 100;
         static string[] healthStatus = { "Perfect Health", "Healthy", "Hurt", "Badly Hurt", "Imminent Danger" };
 
-        static int currentHealthStatus = 0;
         static int shield = 100;
         static int lives = 3;
 
@@ -38,28 +37,28 @@ namespace GeorgiaDavid_HealthSystem
 
             void ShowHUD()
             {
-                if(health >= 100)
+                if (health >= 100)
                 {
-                    currentHealthStatus = 0;
+                    string currentHealthStatus = healthStatus[0];
                 }
-                else if(health <= 99)
+                else if (health <= 99)
                 {
-                    currentHealthStatus = 1;
+                    string currentHealthStatus = healthStatus[1];
                 }
-                else if(health <= 75)
+                else if (health <= 75)
                 {
-                    currentHealthStatus = 2;
+                    string currentHealthStatus = healthStatus[2];
                 }
-                else if(health <= 50)
+                else if (health <= 50)
                 {
-                    currentHealthStatus = 3;
+                    string currentHealthStatus = healthStatus[3];
                 }
-                else if(health <= 10)
+                else if (health <= 10)
                 {
-                    currentHealthStatus = 4;
+                    string currentHealthStatus = healthStatus[4];
                 }
 
-                    Console.WriteLine("Player");
+                Console.WriteLine("Player");
                 Console.Write("Health:" + health);
                 Console.Write(" Shield:" + shield);
                 Console.WriteLine(" Lives:" + lives);
