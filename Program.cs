@@ -39,30 +39,30 @@ namespace GeorgiaDavid_HealthSystem
             {
                 if (health >= 100)
                 {
-                    string currentHealthStatus = healthStatus[0];
+                    
                 }
                 else if (health <= 99)
                 {
-                    string currentHealthStatus = healthStatus[1];
+                    
                 }
                 else if (health <= 75)
                 {
-                    string currentHealthStatus = healthStatus[2];
+                    
                 }
                 else if (health <= 50)
                 {
-                    string currentHealthStatus = healthStatus[3];
+                    
                 }
                 else if (health <= 10)
                 {
-                    string currentHealthStatus = healthStatus[4];
+                    
                 }
 
                 Console.WriteLine("Player");
                 Console.Write("Health:" + health);
                 Console.Write(" Shield:" + shield);
                 Console.WriteLine(" Lives:" + lives);
-                Console.Write("Health Status:" + healthStatus[currentHealthStatus]);
+                Console.Write("Health Status:" + healthStatus[0]);
 
                 Console.ReadKey();
                 Console.Clear();
