@@ -16,7 +16,7 @@ namespace GeorgiaDavid_HealthSystem
 
         static int shield = 100;
         static int lives = 3;
-        static int XP = 0;
+        static int xp = 0;
         static int level = 1;
 
         static void Main(string[] args)
@@ -25,21 +25,9 @@ namespace GeorgiaDavid_HealthSystem
             UnitTestHealthSystem();
             UnitTestXPSystem();
 
-            ShowHUD();
+        }
 
-            TakeDamage(10);
-
-            IncreaseXP(15);
-
-            RegenerateShield(10);
-
-            TakeDamage(110);
-
-            Heal(10);
-
-            TakeDamage(100);
-
-            void ShowHUD()
+            static void ShowHUD()
             {
                 if (health >= 100)
                 {
@@ -57,17 +45,16 @@ namespace GeorgiaDavid_HealthSystem
                 {
                     currentHealthStatus = 3;
                 }
-                else if (health <= 10)
+                else
                 {
                     currentHealthStatus = 4;
                 }
                 
-
                 Console.WriteLine("Player");
                 Console.Write("Health:" + health);
                 Console.Write(" Shield:" + shield);
                 Console.Write(" Lives:" + lives);
-                Console.Write(" XP:" + XP);
+                Console.Write(" XP:" + xp);
                 Console.WriteLine(" Level:" + level);
                 Console.Write("Health Status:" + healthStatus[currentHealthStatus]);
 
@@ -75,7 +62,7 @@ namespace GeorgiaDavid_HealthSystem
                 Console.Clear();
             }
 
-            void TakeDamage(int damage)
+            static void TakeDamage(int damage)
             {
                 Console.WriteLine("You took " + damage + " damage!");
                 Console.ReadKey();
@@ -105,7 +92,7 @@ namespace GeorgiaDavid_HealthSystem
                     
             }
 
-            void Heal(int hp)
+            static void Heal(int hp)
             {
                 Console.WriteLine("You gained " + hp + " health!");
                 Console.ReadKey();
@@ -116,7 +103,7 @@ namespace GeorgiaDavid_HealthSystem
                 ShowHUD();
             }
 
-            void RegenerateShield(int hp)
+            static void RegenerateShield(int hp)
             {
                 Console.WriteLine("You gained " + hp + " shield points!");
                 Console.ReadKey();
@@ -127,7 +114,7 @@ namespace GeorgiaDavid_HealthSystem
                 ShowHUD();
             }
 
-            void Revive()
+            static void Revive()
             {
                 if(lives > 0)
                 {
@@ -156,19 +143,26 @@ namespace GeorgiaDavid_HealthSystem
 
             }
 
-            void IncreaseXP(int exp)
+            static void IncreaseXP(int exp)
             {
                 Console.WriteLine("You defeated an enemy!");
                 Console.Write("You gained " + exp + " XP");
                 Console.ReadKey();
                 Console.Clear();
 
-                XP = XP + exp;
+                xp = xp + exp;
 
+                if(xp >= 100)
+            {
+                level = level + 1;
+                xp = xp - 100;
                 ShowHUD();
             }
-
-        }
+                else
+            {
+                ShowHUD();
+            }
+            }
         static void UnitTestHealthSystem()
         {
             Debug.WriteLine("Unit testing Health System started...");
