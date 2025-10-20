@@ -1,0 +1,7 @@
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\bin\Release\GeorgiaDavid_HealthSystem.exe.config
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\bin\Release\GeorgiaDavid_HealthSystem.exe
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\bin\Release\GeorgiaDavid_HealthSystem.pdb
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\obj\Release\GeorgiaDavid_HealthSystem.csproj.AssemblyReference.cache
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\obj\Release\GeorgiaDavid_HealthSystem.csproj.CoreCompileInputs.cache
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\obj\Release\GeorgiaDavid_HealthSystem.exe
+C:\Users\W0512995\source\repos\GeorgiaDavid_HealthSystem\GeorgiaDavid_HealthSystem\obj\Release\GeorgiaDavid_HealthSystem.pdb
