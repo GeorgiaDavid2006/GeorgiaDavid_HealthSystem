@@ -64,11 +64,17 @@ namespace GeorgiaDavid_HealthSystem
 
             static void TakeDamage(int damage)
             {
+                if(damage < 0)
+                {
+                   Console.WriteLine("Invalid Damage");
+                }
+                else
+                {
                 Console.WriteLine("You took " + damage + " damage!");
                 Console.ReadKey();
                 Console.Clear();
 
-                if(damage > shield)
+                if (damage > shield)
                 {
                     int newDamage = damage - shield;
 
@@ -81,42 +87,61 @@ namespace GeorgiaDavid_HealthSystem
                     shield = shield - damage;
                 }
 
-                if(health <= 0)
+                if (health <= 0)
                 {
-                    Revive();
+                    health = 0;
                 }
                 else
                 {
                     ShowHUD();
                 }
-                    
+            }
+                
             }
 
             static void Heal(int hp)
             {
-                Console.WriteLine("You gained " + hp + " health!");
-                Console.ReadKey();
-                Console.Clear();
+               if (hp < 0)
+               {
+                 Console.WriteLine("Invalid HP");
+               }
+               else
+               {
+                 Console.WriteLine("You gained " + hp + " health!");
+                 Console.ReadKey();
+                 Console.Clear();
 
-                health = health + hp;
+                 health = Math.Min(health + hp, 100);
+                
+                 ShowHUD();
+            }
 
-                ShowHUD();
             }
 
             static void RegenerateShield(int hp)
             {
-                Console.WriteLine("You gained " + hp + " shield points!");
-                Console.ReadKey();
-                Console.Clear();
+              if (hp < 0)
+              {
+                 Console.WriteLine("Invalid HP");
+              }
+              else
+              {
+                 Console.WriteLine("You gained " + hp + " shield points!");
+                 Console.ReadKey();
+                 Console.Clear();
 
-                shield = shield + hp;
+                 shield = Math.Min(shield + hp, 100);
 
-                ShowHUD();
+                
+
+                 ShowHUD();
+            }  
+
             }
 
             static void Revive()
             {
-                if(lives > 0)
+                if (lives > 0)
                 {
                     Console.WriteLine("You died!");
                     Console.ReadKey();
@@ -152,16 +177,23 @@ namespace GeorgiaDavid_HealthSystem
 
                 xp = xp + exp;
 
-                if(xp >= 100)
+                int XPRequired = level * 100;
+
+                if(xp >= XPRequired)
             {
                 level = level + 1;
-                xp = xp - 100;
+                xp = xp - XPRequired;
                 ShowHUD();
+            }
+                else if (xp < 0)
+            {
+                Console.WriteLine("Invalid XP");
             }
                 else
             {
                 ShowHUD();
             }
+
             }
         static void UnitTestHealthSystem()
         {
